@@ -1,0 +1,81 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
+import 'package:ppkd_batch4/widgets/custom_text_field.dart';
+
+class Tugas4 extends StatelessWidget {
+  const Tugas4({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    String getRandomPrice() {
+      final random = Random();
+      int randomNumber = 50000 + random.nextInt(2000000 - 50000);
+      final formatCurrency = NumberFormat.currency(
+        locale: 'id_ID',
+        symbol: 'Rp',
+        decimalDigits: 0,
+      );
+      return formatCurrency.format(randomNumber);
+    }
+
+    final List iconBelanja = [
+      FontAwesomeIcons.shirt,
+      FontAwesomeIcons.shoePrints,
+      FontAwesomeIcons.faceSmileBeam,
+      FontAwesomeIcons.mobileScreen,
+      FontAwesomeIcons.glasses,
+      FontAwesomeIcons.baby,
+      FontAwesomeIcons.gem,
+      FontAwesomeIcons.appleWhole,
+      FontAwesomeIcons.couch,
+    ];
+    final List namaProduct = [
+      'Baju',
+      'Sepatu',
+      'Kecantikan',
+      'SmartPhone',
+      'Kaca Mata',
+      'Perlengkapan Bayi',
+      'Perhiasan',
+      'Fruits',
+      'Perabot',
+    ];
+    return Scaffold(
+      backgroundColor: Color(0xFFBADFDB),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'Tugas 4 Flutter',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          SizedBox(height: 10),
+          CustomTextField('Nama', textInputType: TextInputType.name),
+          SizedBox(height: 10),
+          CustomTextField('Email', textInputType: TextInputType.emailAddress),
+          SizedBox(height: 10),
+          CustomTextField('No. HP', textInputType: TextInputType.phone),
+          SizedBox(height: 10),
+          CustomTextField(
+            'Deskripsi',
+            textInputType: TextInputType.streetAddress,
+            minLines: 5,
+          ),
+          SizedBox(height: 15),
+          ...List.generate(9, (index) {
+            return ListTile(
+              leading: Icon(iconBelanja[index]),
+              title: Text(namaProduct[index]),
+              subtitle: Text(getRandomPrice()),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+}
