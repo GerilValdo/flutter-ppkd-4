@@ -21,10 +21,21 @@ class Tugas4 extends StatelessWidget {
       return formatCurrency.format(randomNumber);
     }
 
+    final List iconColor = [
+      Colors.indigoAccent,
+      Colors.brown.shade400,
+      Colors.deepPurpleAccent,
+      Colors.blueAccent,
+      Colors.cyan.shade600,
+      Colors.pinkAccent,
+      Colors.amberAccent,
+      Colors.redAccent,
+      Colors.teal.shade400,
+    ];
     final List iconBelanja = [
       FontAwesomeIcons.shirt,
       FontAwesomeIcons.shoePrints,
-      FontAwesomeIcons.faceSmileBeam,
+      FontAwesomeIcons.gamepad,
       FontAwesomeIcons.mobileScreen,
       FontAwesomeIcons.glasses,
       FontAwesomeIcons.baby,
@@ -35,7 +46,7 @@ class Tugas4 extends StatelessWidget {
     final List namaProduct = [
       'Baju',
       'Sepatu',
-      'Kecantikan',
+      'Game',
       'SmartPhone',
       'Kaca Mata',
       'Perlengkapan Bayi',
@@ -67,11 +78,13 @@ class Tugas4 extends StatelessWidget {
             minLines: 5,
           ),
           SizedBox(height: 15),
-          ...List.generate(9, (index) {
-            return ListTile(
-              leading: Icon(iconBelanja[index]),
-              title: Text(namaProduct[index]),
-              subtitle: Text(getRandomPrice()),
+          ...List.generate(namaProduct.length, (index) {
+            return Card(
+              child: ListTile(
+                leading: Icon(iconBelanja[index], color: iconColor[index]),
+                title: Text(namaProduct[index]),
+                subtitle: Text(getRandomPrice()),
+              ),
             );
           }),
         ],
