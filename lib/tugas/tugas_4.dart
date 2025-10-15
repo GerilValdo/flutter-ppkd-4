@@ -28,7 +28,7 @@ class Tugas4 extends StatelessWidget {
       Colors.blueAccent,
       Colors.cyan.shade600,
       Colors.pinkAccent,
-      Colors.amberAccent,
+      Colors.amber.shade700,
       Colors.redAccent,
       Colors.teal.shade400,
     ];
@@ -81,7 +81,15 @@ class Tugas4 extends StatelessWidget {
           ...List.generate(namaProduct.length, (index) {
             return Card(
               child: ListTile(
-                leading: Icon(iconBelanja[index], color: iconColor[index]),
+                leading: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade300,
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Icon(iconBelanja[index], color: iconColor[index]),
+                ),
                 title: Text(namaProduct[index]),
                 subtitle: Text(getRandomPrice()),
               ),
