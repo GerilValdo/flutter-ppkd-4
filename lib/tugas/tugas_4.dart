@@ -64,6 +64,7 @@ class Tugas4 extends StatelessWidget {
         ),
       ),
       body: ListView(
+        padding: EdgeInsets.all(10),
         children: [
           SizedBox(height: 10),
           CustomTextField('Nama', textInputType: TextInputType.name),
@@ -91,7 +92,10 @@ class Tugas4 extends StatelessWidget {
                   child: Icon(iconBelanja[index], color: iconColor[index]),
                 ),
                 title: Text(namaProduct[index]),
-                subtitle: Text(getRandomPrice()),
+                subtitle: Text(
+                  getRandomPrice(),
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
             );
           }),
