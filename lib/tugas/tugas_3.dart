@@ -47,26 +47,39 @@ class Tugas3 extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16),
-          GridView.count(
-            crossAxisCount: 3,
-            mainAxisSpacing: 5,
-            crossAxisSpacing: 5,
-            physics: NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            children: List.generate(6, (index) {
-              return Container(
-                alignment: Alignment.center,
-                color: listColor[index],
-                child: Stack(
-                  children: [
-                    Text(
-                      'Container ${index + 1}',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ],
-                ),
-              );
-            }),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: GridView.count(
+              crossAxisCount: 3,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 8,
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              children: List.generate(listColor.length, (index) {
+                return Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black54,
+                        blurRadius: 10,
+                        spreadRadius: 1,
+                      ),
+                    ],
+                    color: listColor[index],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Stack(
+                    children: [
+                      Text(
+                        'Container ${index + 1}',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ],
+                  ),
+                );
+              }),
+            ),
           ),
         ],
       ),
