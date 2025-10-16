@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 // import 'package:ppkd_batch4/tugas/tugas_1.dart';
 // import 'package:ppkd_batch4/tugas/tugas_2.dart';
-import 'package:ppkd_batch4/tugas/tugas_3.dart';
+//import 'package:ppkd_batch4/tugas/tugas_3.dart';
 // import 'package:ppkd_batch4/tugas/tugas_4.dart';
+import 'package:ppkd_batch4/tugas/tugas_5.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,7 +56,7 @@ class _MyAppState extends State<MyApp> {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: Tugas3(),
+      home: Tugas5(),
     );
   }
 }
