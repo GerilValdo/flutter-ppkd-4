@@ -31,7 +31,7 @@ class _Tugas21State extends State<Tugas2> {
               }
               return Icon(Icons.wb_sunny, size: 18, color: Colors.orangeAccent);
             }),
-            activeThumbColor: Colors.blue,
+            activeThumbColor: Colors.blueAccent,
             value: isDark,
             onChanged: widget.onChanged,
           ),

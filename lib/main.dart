@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:ppkd_batch4/config/route.dart';
+import 'package:ppkd_batch4/tugas/home_screen.dart';
+import 'package:ppkd_batch4/tugas/tugas_7.dart';
+import 'package:ppkd_batch4/tugas/tugas_8.dart';
 // import 'package:ppkd_batch4/tugas/tugas_1.dart';
 // import 'package:ppkd_batch4/tugas/tugas_2.dart';
 //import 'package:ppkd_batch4/tugas/tugas_3.dart';
 // import 'package:ppkd_batch4/tugas/tugas_4.dart';
 // import 'package:ppkd_batch4/tugas/tugas_5.dart';
-import 'package:ppkd_batch4/tugas/tugas_slicing_mpro.dart';
+// import 'package:ppkd_batch4/tugas/tugas_slicing_mpro.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('id_ID', null);
   runApp(const MyApp());
 }
 
@@ -28,6 +35,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {RouteScreen.home.path: (context) => HomeScreen()},
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.indigo,
@@ -57,7 +65,7 @@ class _MyAppState extends State<MyApp> {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: TugasSlicingMpro(),
+      home: Tugas8(onChanged: toggleTheme),
     );
   }
 }

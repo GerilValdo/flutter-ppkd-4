@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:ppkd_batch4/config/route.dart';
 import 'package:ppkd_batch4/config/style_text.dart';
 import 'package:ppkd_batch4/widgets/custom_button.dart';
 import 'package:ppkd_batch4/widgets/custom_text_field_auth.dart';
@@ -144,7 +145,9 @@ class TugasSlicingMpro extends StatelessWidget {
               Spacer(),
               InkWell(
                 borderRadius: BorderRadius.circular(80),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RouteScreen.home.path);
+                },
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 14, horizontal: 8),
                   decoration: BoxDecoration(
