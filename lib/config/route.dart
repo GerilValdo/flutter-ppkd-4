@@ -1,5 +1,6 @@
 enum RouteScreen {
-  home('/home');
+  home('/home'),
+  confirmationScreen('/confirmation');
   const RouteScreen(this.path);
 
   final String path;
