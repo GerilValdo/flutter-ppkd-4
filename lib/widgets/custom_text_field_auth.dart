@@ -2,11 +2,20 @@ import 'package:flutter/material.dart';
 
 class CustomTextFieldAuth extends StatelessWidget {
   final String label;
-  const CustomTextFieldAuth({super.key, required this.label});
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
+  const CustomTextFieldAuth({
+    super.key,
+    required this.label,
+    this.validator,
+    this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      validator: validator,
       decoration: InputDecoration(
         filled: true,
         fillColor: Color(0xFFD3D3D3).withValues(alpha: 0.7),
