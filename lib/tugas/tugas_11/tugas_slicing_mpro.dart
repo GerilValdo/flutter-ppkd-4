@@ -189,13 +189,13 @@ class _TugasSlicingMproState extends State<TugasSlicingMpro> {
                   borderRadius: BorderRadius.circular(80),
                   onTap: () async {
                     if (_formKey.currentState!.validate()) {
-                      // print(emailController.text);
-                      PreferenceHandler.saveLogin(true);
                       final data = await DbHelper.loginUser(
                         username: usernameController.text,
                         password: passwordController.text,
                       );
+
                       if (data != null) {
+                        await PreferenceHandler.saveLogin(true);
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text('Login Berhasil')),
                         );

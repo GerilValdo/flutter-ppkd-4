@@ -247,7 +247,7 @@ class _LoginScreenState extends State<LoginScreen> {
       width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/background.png"),
+          image: AssetImage("assets/images/pikachu.webp"),
           fit: BoxFit.cover,
         ),
       ),
