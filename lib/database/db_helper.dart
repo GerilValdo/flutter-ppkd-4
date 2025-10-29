@@ -58,6 +58,25 @@ class DbHelper {
     return null;
   }
 
+  //UPDATE SISWA
+  static Future<void> updateUser(UserModel user) async {
+    final dbs = await db();
+    await dbs.update(
+      tableUser,
+      user.toJson(),
+      where: "id = ?",
+      whereArgs: [user.id],
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+    print(user.toJson());
+  }
+
+  //DELETE SISWA
+  static Future<void> deleteUser(int id) async {
+    final dbs = await db();
+    await dbs.delete(tableUser, where: "id = ?", whereArgs: [id]);
+  }
+
   //MENAMBAHKAN SISWA
   // static Future<void> createStudent(StudentModel student) async {
   //   final dbs = await db();

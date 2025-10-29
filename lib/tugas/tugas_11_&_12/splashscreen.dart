@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_batch4/config/book_image.dart';
 import 'package:ppkd_batch4/preferences/preference_handler.dart';
-import 'package:ppkd_batch4/tugas/tugas_11/home_screen.dart';
+import 'package:ppkd_batch4/tugas/tugas_11_&_12/home_screen.dart';
 // import 'package:ppkd_batch4/tugas/tugas_11/register_screen.dart';
-import 'package:ppkd_batch4/tugas/tugas_11/tugas_slicing_mpro.dart';
+import 'package:ppkd_batch4/tugas/tugas_11_&_12/tugas_slicing_mpro.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
