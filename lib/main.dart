@@ -3,11 +3,13 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:ppkd_batch4/config/route.dart';
 import 'package:ppkd_batch4/tugas/tugas_11_&_12/home_screen.dart';
 import 'package:ppkd_batch4/tugas/tugas_11_&_12/register_screen.dart';
-import 'package:ppkd_batch4/tugas/tugas_11_&_12/splashscreen.dart';
+// import 'package:ppkd_batch4/tugas/tugas_11_&_12/splashscreen.dart';
 // import 'package:ppkd_batch4/tugas/tugas_8.dart';
 // import 'package:ppkd_batch4/tugas/tugas%209/tugas_9.dart';
 import 'package:ppkd_batch4/tugas/tugas_10/tugas_10.dart';
 import 'package:ppkd_batch4/tugas/tugas_11_&_12/tugas_slicing_mpro.dart';
+import 'package:ppkd_batch4/tugas/tugas_14/view/anime_list_screen.dart';
+import 'package:ppkd_batch4/tugas/tugas_14/view/home_screen_anime.dart';
 // import 'package:ppkd_batch4/tugas/tugas_1.dart';
 // import 'package:ppkd_batch4/tugas/tugas_2.dart';
 //import 'package:ppkd_batch4/tugas/tugas_3.dart';
@@ -74,7 +76,7 @@ class _MyAppState extends State<MyApp> {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: Splashscreen(),
+      home: AnimeListScreen(),
     );
   }
 }
