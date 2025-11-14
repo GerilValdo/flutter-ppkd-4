@@ -2,6 +2,20 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class PreferenceHandler {
   static const String isLogin = "isLogin";
+  static const String isToken = "isToken";
+
+
+  static saveToken(String value) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString(isToken, value);
+  }
+
+  
+  static getToken() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(isToken);
+  }
+
 
   //Save data login pada saat login
   static saveLogin(bool value) async {
